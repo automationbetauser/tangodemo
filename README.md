@@ -1,4 +1,4 @@
-A demo app for codestream deployment execution
+A demo app for codestream
 
 Checkout the files.
 
