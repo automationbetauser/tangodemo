@@ -28,6 +28,7 @@ spec:
     tier: frontend
   type: LoadBalancer 
 ---
+
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
