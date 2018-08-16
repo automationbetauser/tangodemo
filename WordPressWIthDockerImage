@@ -19,6 +19,7 @@ inputs:
   dockerImage:
     type: string
     title: Docker image
+    default: ''
     description: Docker Image installed on prov machine
 resources:
   mysql:
