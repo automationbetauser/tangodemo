@@ -74,7 +74,7 @@ resources:
          - mysql-client
 
         runcmd:
-         - docker pull ${input.dockerImage}
+         - docker pull ${input.dockerimage}
          - mkdir -p /var/www/html/mywordpresssite && cd /var/www/html && wget https://wordpress.org/latest.tar.gz && tar -xzf /var/www/html/latest.tar.gz -C /var/www/html/mywordpresssite --strip-components 1
          - i=0; while [ $i -le 5 ]; do mysql --connect-timeout=3 -h ${mysql.networks[0].address} -u root -pmysqlpassword -e "SHOW STATUS;" && break || sleep 15; i=$((i+1)); done
          - mysql -u root -pmysqlpassword -h ${mysql.networks[0].address} -e "create database wordpress_blog;"
