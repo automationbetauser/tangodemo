@@ -16,7 +16,7 @@ inputs:
     default: '2'
     title: Wordpress BootDisk Size
     description: Size of word press node
-  dockerImage:
+  dockerimage:
     type: string
     title: Docker image
     default: ''
