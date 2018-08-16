@@ -11,15 +11,10 @@ inputs:
     default: '2'
     title: WordPress Cluster Size
     description: Wordpress cluster size
-  disksize:
+  dockerimg:
     type: string
-    default: '2'
-    title: Wordpress BootDisk Size
-    description: Size of word press node
-  dockerimage:
-    type: string
+    default: 'test'
     title: Docker image
-    default: ''
     description: Docker Image installed on prov machine
 resources:
   mysql:
@@ -57,7 +52,7 @@ resources:
       count: '${input.cluster}'
       storage:
         disks:
-          - capacityGb: '${input.disksize}'
+          - capacityGb: '2'
             name: BootDisk
       flavor: small
       cloudConfig: |
@@ -74,7 +69,7 @@ resources:
          - mysql-client
 
         runcmd:
-         - docker pull ${input.dockerimage}
+         - docker pull ${input.dockerimg}
          - mkdir -p /var/www/html/mywordpresssite && cd /var/www/html && wget https://wordpress.org/latest.tar.gz && tar -xzf /var/www/html/latest.tar.gz -C /var/www/html/mywordpresssite --strip-components 1
          - i=0; while [ $i -le 5 ]; do mysql --connect-timeout=3 -h ${mysql.networks[0].address} -u root -pmysqlpassword -e "SHOW STATUS;" && break || sleep 15; i=$((i+1)); done
          - mysql -u root -pmysqlpassword -h ${mysql.networks[0].address} -e "create database wordpress_blog;"
