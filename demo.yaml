@@ -1,2 +1,5 @@
----
-apples: Yes
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prod3
+  namespace: prod3
