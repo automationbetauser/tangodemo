@@ -6,7 +6,7 @@ image::arch-1.jpg[Architecture]
 image::arch-2.jpg[Architecture]
 
 === Requirements
-
+ 
   - CloudFoundry (tested with pcfdev v0.21)
   - Apache Geode (tested with v1.0.0-incubating.M2) - to be replaced by GemFire 9.0 when that is released
   - PostgreSQL (tested with 9.5.3) - to be replaced by Greenplum server once GemFire 9.0 is released
