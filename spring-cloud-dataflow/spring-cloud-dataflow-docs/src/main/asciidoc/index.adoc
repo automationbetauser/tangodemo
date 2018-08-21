@@ -1,0 +1,52 @@
+= Spring Cloud Data Flow Reference Guide
+Sabby Anandan; Marius Bogoevici; Eric Bottard; Mark Fisher; Ilayaperumal Gopinathan; Gunnar Hillert; Mark Pollack; Patrick Peralta; Glenn Renfro; Thomas Risberg; Dave Syer; David Turanski; Janne Valkealahti; Oleg Zhurakousky; Jay Bryant; Vinicius Carvalho; Chris Schaefer
+:doctype: book
+:toc: left
+:toclevels: 4
+:source-highlighter: prettify
+:numbered:
+:icons: font
+:hide-uri-scheme:
+:docinfo: shared
+
+:spring-cloud-dataflow-docs: https://docs.spring.io/spring-cloud-dataflow/docs/{project-version}/reference
+:spring-cloud-dataflow-docs-current: https://docs.spring.io/spring-cloud-dataflow/docs/current-SNAPSHOT/reference/html/
+:spring-cloud-stream-docs: https://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle/index.html
+:spring-boot-version: 1.5.13.RELEASE
+:spring-boot-docs-reference: https://docs.spring.io/spring-boot/docs/1.5.13.RELEASE/reference
+:scs-app-starters-docs: https://docs.spring.io/spring-cloud-stream-app-starters/docs/Celsius.SR2/reference/html
+:scs-app-starters-docs-htmlsingle: https://docs.spring.io/spring-cloud-stream-app-starters/docs/Celsius.SR2/reference/htmlsingle
+:github-repo: spring-cloud/spring-cloud-dataflow
+:github-code: https://github.com/{github-repo}
+
+:dataflow-asciidoc: https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/master/spring-cloud-dataflow-docs/src/main/asciidoc
+
+ifdef::backend-html5[]
+
+Version {project-version}
+
+(C) 2012-2017 Pivotal Software, Inc.
+
+_Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically._
+
+endif::backend-html5[]
+
+// ======================================================================================
+
+include::preface.adoc[]
+include::getting-started.adoc[]
+include::applications.adoc[]
+include::architecture.adoc[]
+include::configuration.adoc[]
+include::shell.adoc[]
+include::streams.adoc[]
+include::streams-skipper.adoc[]
+include::streams-developer-guide.adoc[]
+include::tasks.adoc[]
+include::task-developer-guide.adoc[]
+include::dashboard.adoc[]
+include::samples.adoc[]
+include::api-guide.adoc[]
+include::appendix.adoc[]
+
+// ======================================================================================

@@ -1,0 +1,44 @@
+server:
+  port: 9393
+management:
+  contextPath: /management
+  security:
+    enabled: false
+info:
+  app:
+    name: "@project.artifactId@"
+    description: "@project.name@"
+    version: "@project.version@"
+security:
+  basic:
+    enabled: false
+
+maven:
+  remoteRepositories:
+    springRepo:
+      url: https://repo.spring.io/libs-snapshot
+
+spring:
+  application:
+    name: spring-cloud-dataflow-server-local
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  cloud:
+    config:
+      uri: http://localhost:8888
+
+  datasource:
+#    url: jdbc:h2:tcp://localhost:19092/mem:dataflow;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:tcp://localhost:19092/mem:dataflow
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  task:
+    repo:
+      initialize: true
+  dataflow:
+    embedded:
+      database:
+        enabled: true

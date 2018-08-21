@@ -1,0 +1,37 @@
+{
+  "groups": [
+    {
+      "name": "log",
+      "type": "com.foo.LogProperties",
+      "sourceType": "com.foo.LogProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "log.level",
+      "type": "java.lang.String",
+      "description": "The logger level",
+      "sourceType": "com.foo.LogProperties",
+      "defaultValue": "debug"
+    }
+  ],
+  "hints": [
+    {
+      "name": "level",
+      "values": [
+        {
+          "value": "debug"
+        },
+        {
+          "value": "info"
+        },
+        {
+          "value": "warn"
+        },
+        {
+          "value": "error"
+        }
+      ]
+    }
+  ]
+}
