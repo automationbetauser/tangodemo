@@ -1,0 +1,13 @@
+---
+applications:
+- name: webconsole
+  memory: 512M 
+  instances: 1
+  host: transactions-console
+  path: build/libs/WebConsole.jar
+  services:
+    - gemfire
+
+    
+  
+    

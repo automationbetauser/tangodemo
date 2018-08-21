@@ -1,0 +1,127 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.15.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+		flatDir dir: "${projectDir}/gradle/plugins"
+		
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+		classpath("io.spring.gradle:dependency-management-plugin:0.5.6.RELEASE")		
+	}
+}
+
+plugins {
+	//id 'org.springframework.boot' version '2.0.4.RELEASE'
+id 'org.springframework.boot' version '1.5.15.RELEASE'
+}
+
+apply plugin: 'scala'
+apply plugin: 'eclipse'
+apply plugin: 'java'
+apply plugin: "io.spring.dependency-management"
+apply plugin: 'org.springframework.boot'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = '1.0'
+
+sourceSets.main.scala.srcDir "src/main/java"
+sourceSets.main.java.srcDirs = []
+
+
+
+def scalaVersion = '2.10.6'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'io.pivotal.demo.ClusterTrainingApp'
+    }
+}
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url "https://repo.spring.io/libs-release/" }
+    maven { url "https://repo.spring.io/libs-snapshot/" }
+    maven { url "http://repo.spring.io/milestone" }
+    maven { url "https://mvnrepository.com/artifact/" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "https://dl.bintray.com/spark-packages/maven/"}
+}
+
+configurations {
+    idea {
+        transitive = true
+    }
+}
+
+
+dependencies {
+    
+    compile "org.scala-lang:scala-library:$scalaVersion"
+    
+    compile ('org.apache.spark:spark-core_2.10:1.6.0'){
+    	exclude group: 'com.fasterxml.jackson.core'
+		exclude group: 'com.fasterxml.jackson.module'
+		exclude group: 'org.slf4j'
+		exclude group: 'org.eclipse.jetty.orbit'
+	}
+    
+    
+	compile ('org.apache.spark:spark-mllib_2.10:1.6.0'){
+    	exclude group: 'com.fasterxml.jackson.core'
+		exclude group: 'com.fasterxml.jackson.module'
+		exclude group: 'org.slf4j'
+		exclude group: 'org.eclipse.jetty.orbit'
+	}
+	
+	compile('org.springframework.boot:spring-boot-starter-web'){
+		exclude group: 'com.fasterxml.jackson.core'
+		exclude (group: 'org.springframework.boot', module: 'spring-boot-starter-logging')
+		 
+	}
+
+	compile ('com.fasterxml.jackson.core:jackson-databind:2.6.5')
+	
+	compile ('com.fasterxml.jackson.module:jackson-module-scala_2.10:2.6.5')
+	
+	compile ('postgresql:postgresql:9.1-901-1.jdbc4')
+	
+	compile ('com.databricks:spark-csv_2.11:1.5.0')
+	
+
+
+	compile ('org.springframework.boot:spring-boot-starter-logging')
+
+	compile('org.springframework.boot:spring-boot-starter-data-redis'){
+		exclude group: 'com.fasterxml.jackson.core'
+	}
+    //compile group: 'RedisLabs', name: 'spark-redis', version: '0.3.2' 
+
+	compile ('RedisLabs:spark-redis:0.3.2'){
+    	exclude group: 'org.slf4j'	
+		exclude group: 'org.scala-lang'
+		exclude group: 'org.apache.spark'	
+	}
+	
+	compile ('org.springframework.cloud:spring-cloud-spring-service-connector:1.2.6.RELEASE')
+	compile ('org.springframework.cloud:spring-cloud-cloudfoundry-connector:1.2.6.RELEASE')
+		
+}
+
+
+eclipse {
+	classpath {
+		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+	}
+}
+
+
+
+

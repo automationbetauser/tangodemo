@@ -1,0 +1,2 @@
+start locator --name=locator --J=-Dgemfire.http-service-port=7575 --hostname-for-clients=localhost  
+start server --name=server1 --cache-xml-file=src/main/resources/server-cache.xml --J=-Dgemfire.start-dev-rest-api=true --J=-Dgemfire.http-service-bind-address=localhost --J=-Dgemfire.http-service-port=8888 --locators=localhost[10334] --hostname-for-clients=localhost --server-bind-address=localhost 
