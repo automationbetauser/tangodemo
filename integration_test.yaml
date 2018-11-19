@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: k8s-tests
+  namespace: k8s-tests
+---  
+apiVersion: v1
+data:
+  .dockercfg: eyJzeW1waG9ueS10YW5nby1iZXRhMi5qZnJvZy5pbyI6eyJ1c2VybmFtZSI6InRhbmdvLWJldGEyIiwicGFzc3dvcmQiOiJhRGstcmVOLW1UQi1IejciLCJlbWFpbCI6InRhbmdvLWJldGEyQHZtd2FyZS5jb20iLCJhdXRoIjoiZEdGdVoyOHRZbVYwWVRJNllVUnJMWEpsVGkxdFZFSXRTSG8zIn19
+kind: Secret
+metadata:
+  name: jfrog-beta2	
+  namespace: k8s-tests
+type: kubernetes.io/dockercfg
+---   
+apiVersion: v1
+kind: Service
+metadata:
+  name: codestream-demo
+  namespace: k8s-tests
+  labels:
+    app: codestream-demo
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: codestream-demo
+    tier: frontend
+  type: LoadBalancer 
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: codestream-demo
+  namespace: k8s-tests
+  labels:
+    app: codestream-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: codestream-demo
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: codestream-demo
+        tier: frontend
+    spec:
+      containers:
+      - name: codestream-demo
+        image: symphony-tango-beta2.jfrog.io/codestream-demo:base
+        ports:
+        - containerPort: 80
+          name: codestream-demo
+      imagePullSecrets:
+      - name: jfrog-beta2
