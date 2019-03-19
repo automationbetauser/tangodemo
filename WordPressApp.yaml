@@ -13,7 +13,7 @@ inputs:
     description: Wordpress cluster size
   disksize:
     type: string
-    default: '2'
+    default: '4'
     title: Wordpress BootDisk Size
     description: Size of word press node
 resources:
