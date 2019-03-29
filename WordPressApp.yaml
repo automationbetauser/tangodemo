@@ -7,12 +7,12 @@ inputs:
     description: Size of nodes
     title: Database Flavor Size
   cluster:
-    type: string
+    type: integer
     default: '2'
     title: WordPress Cluster Size
     description: Wordpress cluster size
   disksize:
-    type: string
+    type: integer
     default: '4'
     title: Wordpress BootDisk Size
     description: Size of word press node
