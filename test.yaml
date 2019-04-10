@@ -11,7 +11,7 @@ resources:
     properties:
       folderName: Workloads
       name: databaseVM
-      image: ubuntu-16
+      image: ubuntu
       flavor: ${input.flavor}
       constraints:
         - tag: 'env:cicd'
