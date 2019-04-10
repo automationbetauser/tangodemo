@@ -1,0 +1,24 @@
+formatVersion: 1
+inputs:
+  flavor:
+    type: string
+    default: medium
+    description: VM size
+    title: Database VM H/W size
+resources:
+  databaseVM:
+    type: Cloud.Machine
+    properties:
+      folderName: Workloads
+      name: databaseVM
+      image: ubuntu-16
+      flavor: ${input.flavor}
+      constraints:
+        - tag: 'env:cicd'
+      networks:
+        - name: '${resource.dpcMgt.name}'
+  dpcMgt:
+    type: Cloud.Network
+    properties:
+      name: dpcMgt
+      networkType: existing
