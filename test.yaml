@@ -13,8 +13,6 @@ resources:
       name: databaseVM
       image: ubuntu
       flavor: ${input.flavor}
-      constraints:
-        - tag: 'env:cicd'
       networks:
         - name: '${resource.dpcMgt.name}'
   dpcMgt:
