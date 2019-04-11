@@ -5,4 +5,4 @@ resources:
     type: Cloud.Machine
     properties:
       image: 'ubuntu'
-      flavor: 'micro:t2.micro'
+      flavor: 'micro'
