@@ -1,8 +1,27 @@
+name: LinuxWithCustomizations
+iteration: 1
+description: Linux Customize BP
 formatVersion: 1
-inputs: {}
+inputs: 
+  flavor:
+    type: string
+    default: medium
+    description: VM size
+    title: Database VM H/W size
 resources:
-  Cloud_Machine_1:
+  databaseVM:
     type: Cloud.Machine
     properties:
-      image: 'ubuntu'
-      flavor: 'micro'
+      folderName: Workloads
+      name: databaseVM
+      image: ubuntu-16
+      flavor: ${input.flavor}
+      constraints:
+        - tag: 'env:cicd'
+      networks:
+        - name: '${resource.dpcMgt.name}'
+  dpcMgt:
+    type: Cloud.Network
+    properties:
+      name: dpcMgt
+      networkType: existing
