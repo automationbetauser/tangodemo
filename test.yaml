@@ -1,4 +1,4 @@
-formatVersion: 2
+formatVersion: 1
 inputs:
   flavor:
     type: string
