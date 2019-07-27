@@ -5,5 +5,5 @@ resources:
     type: Cloud.Machine
     properties:
       image: ubuntu
-      flavor: micro
+      flavor: medium
       count: 1
