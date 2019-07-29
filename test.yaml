@@ -1,7 +1,7 @@
 formatVersion: 1
 inputs: {}
 resources:
-  Cloud_Machine_1:
+  medium:
     type: Cloud.Machine
     properties:
       image: ubuntu
