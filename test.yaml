@@ -1,9 +1,32 @@
 formatVersion: 1
-inputs: {}
+inputs:
+  integerVar:
+    type: integer
+    encrypted: false
+    default: 1
+  stringVar:
+    type: string
+    encrypted: false
+    default: raju
+  BooleanVar:
+    type: boolean
+    encrypted: false
+    default: true
+  objectVar:
+    type: object
+    encrypted: false
+    default:
+      darshan: digikar
+  arrayVar:
+    type: array
+    encrypted: false
+    default:
+      - '1'
+      - '2'
 resources:
-  medium:
+  Cloud_Machine_1:
     type: Cloud.Machine
     properties:
       image: ubuntu
       flavor: micro
-      count: 1
+      count: 2
