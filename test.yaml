@@ -8,6 +8,10 @@ inputs:
     type: string
     encrypted: false
     default: raju
+  flavorVar:
+    type: string
+    encrypted: false
+    default: medium
   BooleanVar:
     type: boolean
     encrypted: false
