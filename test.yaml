@@ -33,4 +33,4 @@ resources:
     properties:
       image: ubuntu
       flavor: micro
-      count: 2
+      count: ${input.integerVar}
