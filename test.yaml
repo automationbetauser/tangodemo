@@ -1,0 +1,36 @@
+formatVersion: 1
+inputs:
+  integerVar:
+    type: integer
+    encrypted: false
+    default: 1
+  stringVar:
+    type: string
+    encrypted: false
+    default: raju
+  flavorVar:
+    type: string
+    encrypted: false
+    default: medium
+  BooleanVar:
+    type: boolean
+    encrypted: false
+    default: true
+  objectVar:
+    type: object
+    encrypted: false
+    default:
+      darshan: digikar
+  arrayVar:
+    type: array
+    encrypted: false
+    default:
+      - '1'
+      - '2'
+resources:
+  Cloud_Machine_1:
+    type: Cloud.Machine
+    properties:
+      image: ubuntu
+      flavor: micro
+      count: ${input.integerVar}

@@ -1,0 +1,15 @@
+inputs: {}
+resources:
+  web1:
+    type: Cloud.Machine
+    properties:
+      cloudConfig: |
+        #cloud-config
+        packages:
+          - apache2
+      count: 1
+      image: Ubuntu
+      constraints:
+        - tag: 'cloud:vsphere'
+      flavor: small
+
