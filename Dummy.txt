@@ -3,4 +3,4 @@ Initial commit for testing.......
 test 
 
 
-from viewer
+from admin
