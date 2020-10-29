@@ -4,6 +4,6 @@ resources:
   Cloud_Machine_1:
     type: Cloud.Machine
     properties:
-      image: ubuntu
-      flavor: small
+      image: ubuntu-1
+      flavor: nano
       count: 1
