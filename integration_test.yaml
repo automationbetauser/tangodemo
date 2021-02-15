@@ -1,1 +1,7 @@
 
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: codestream-do-not-delete
+  namespace: codestream-do-not-delete
+  
