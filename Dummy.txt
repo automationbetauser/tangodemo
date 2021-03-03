@@ -1,7 +1,2 @@
 Initial commit for testing...
 second commit
-....
-sdv
-ABC
-testing
-ASD
