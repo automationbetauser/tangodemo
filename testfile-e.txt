@@ -1,7 +1,2 @@
 exclusion test
-
-test
-
-YY
-
-rrere
+exclusion
