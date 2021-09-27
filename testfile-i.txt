@@ -1,5 +1,3 @@
 inclusion test
 testing
- 
- 
- 
+ inclusion
