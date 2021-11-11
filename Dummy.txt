@@ -1,3 +1,7 @@
-Initial commit for testing....
-...
-Marc's edit.  Yea!
+
+Initial commit for testing...
+second commit
+third one
+fourth one
+fifth one
+sixth
