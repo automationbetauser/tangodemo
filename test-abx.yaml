@@ -9,11 +9,11 @@ projectId: 267f8448-d26f-4b65-b310-9212adb3c455
 runtime: python
 source: |
     def handler(context, inputs):
-        greeting = \"Hello popo, {0}!\".format(inputs[\"target\"])
+        greeting = "Hello popo, {0}!".format(inputs["target"])
         print(greeting)
     
         outputs = {
-          \"greeting\": greeting
+          "greeting": greeting
         }
         return outputs
 timeoutSeconds: 600
