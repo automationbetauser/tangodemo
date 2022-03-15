@@ -1,4 +1,4 @@
-A demo app for codestream. Just a demo.
+1A demo app for codestream
 
 Checkout the files.
 
